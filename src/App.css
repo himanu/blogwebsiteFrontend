@@ -27,3 +27,21 @@ input:focus {
 .errorInputBox {
   border: 2px solid rgb(238, 33, 33);
 }
+.maze {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+.cell {
+  background-color: aliceblue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.blocked {
+  background-color: red;
+}
+.visitedCell {
+  background-color: greenyellow;
+}
