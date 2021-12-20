@@ -1,43 +1,32 @@
-import { useEffect, useState } from 'react';
-import './App.css';
-import TakeN from './TakeN';
-import { createBrowserHistory } from "history";
-import qs from 'qs';
-import Maze from './Maze';
-function App() {
-  const history = createBrowserHistory();
-  const [n, setN] = useState(null);
-
-  useEffect(()=>{
-    let temp = qs.parse(history.location.search.substr(1)).count;
-    console.log('temp ',temp);
-    if(temp === null || isNaN(parseInt(temp)) || temp <= 0) {
-      setN(null);
-      history.push(``);
-    }
-    else {
-      setN(parseInt(temp));
-    }
-  },[]);
-
-
-  function hello(rows) {
-    if( rows === null || isNaN(parseInt(rows)) || rows <= 0) {
-      setN(null);
-      history.push(``);
-    }
-    else {
-      setN(rows);
-      history.push(`?count=${rows}`);
-    }
-  }
-
+import styles from './App.module.css';
+import Home from './Components/Home';
+import Addblog from './Components/Addblog';
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Link
+} from "react-router-dom";
+const App = () => {
   return (
-    <div className="app">
-      <h1 className="heading"> Welcome to the Game! </h1>
-      { n? <Maze n={n}/>: <TakeN demo={hello}/>}
-    </div>
-  );
+    <>
+      <Router>
+        <div className={styles.App}>
+          <nav>
+            <ul>
+              <li> <Link to="/"> Home </Link> </li>
+              <li> <Link to="/addBlog"> Add Blog </Link> </li>
+            </ul>
+          </nav>
+          
+          <Routes>
+            <Route path="/" element={<Home/>} />
+            <Route path="/addBlog" element={ <Addblog /> }/>
+          </Routes>
+        </div>
+      </Router>
+    </>
+  )
 }
 
 export default App;

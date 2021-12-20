@@ -1,0 +1,36 @@
+.addBlog {
+
+}
+.heading {
+    font-size: 1.5rem;
+}
+.form {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin: auto;
+    gap: 1rem;
+}
+.input {
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    font-size: 2rem;
+}
+.textarea {
+    border: 1px solid #ccc;
+    height: 200px;
+    font-size: 1.5rem;
+    padding: 0.5rem;
+}
+.submitBtn {
+    align-self: center;
+    padding: 0.5rem;
+    cursor: pointer;
+    background-color: #333;
+    color: #fff;
+    border: 0px;
+    border-radius: 5px;
+}
+.submitBtn:hover {
+    background-color: rgb(29, 28, 28);
+}
