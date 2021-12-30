@@ -1,6 +1,7 @@
 import styles from './App.module.css';
 import Home from './Components/Home';
 import Addblog from './Components/Addblog';
+import { useState } from 'react';
 import {
   BrowserRouter as Router,
   Routes,
@@ -8,6 +9,8 @@ import {
   Link
 } from "react-router-dom";
 const App = () => {
+  const [title, setTitle] = useState('');
+  const [body, setBody] = useState('');
   return (
     <>
       <Router>
@@ -21,7 +24,7 @@ const App = () => {
           
           <Routes>
             <Route path="/" element={<Home/>} />
-            <Route path="/addBlog" element={ <Addblog /> }/>
+            <Route path="/addBlog" element={ <Addblog body={body} setBody={setBody} title={title} setTitle={setTitle} /> }/>
           </Routes>
         </div>
       </Router>

@@ -34,3 +34,8 @@
 .submitBtn:hover {
     background-color: rgb(29, 28, 28);
 }
+.submitBtn:disabled {
+    opacity: 0.8;
+    background-color: #333;
+    cursor: text;
+}

@@ -1,3 +1,36 @@
 .heading {
     font-size: 1.5rem;
 }
+.blogsContainer {
+    padding: 1rem;
+}
+.blogs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: space-evenly;
+}
+.blog {
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    height: 200px;
+    border: 1px solid #ccc;
+}
+.title {
+    border-bottom: 1px solid #ccc;
+    margin: 0.25rem;
+}
+.body {
+    margin: 0.25rem;
+    flex-grow: 1;
+}
+.footer {
+    margin: 0.25rem;
+    display: flex;
+    position: relative;
+    justify-content: center;
+}
+.footer > * {
+    flex-grow: 1;
+}
